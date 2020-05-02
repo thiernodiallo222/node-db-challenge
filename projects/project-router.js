@@ -50,5 +50,16 @@ router.get('/:id', async (req, res, next) => {
           next(error);
       }
 })
+router.get('/:id/detailedView', async(req, res, next)=> {
+  try {
+    const project = await projects.getProjectsTR(req.params.id);
+    if (!project) {
+      res.json({message:"Sorry, we cannot find a specific project"})
+    }
+    res.json(project);
+  } catch (error) {
+    next(error);
+  }
+})
     
 module.exports = router;
