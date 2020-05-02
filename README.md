@@ -40,9 +40,18 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] Explain the difference between `Relational Databases` and `SQL`.
 
+    Relational databases are a database software, which manages, storage, querying, updating and maintaining data. SQL, in the other hand, is a dialect, which is used to query relational databases.
+
 - [ ] Why do tables need a `primary key`?
 
+      The reason tables need a primary key is because we need a unique identifier for each entry in that table, for data access proposes.
+      What is the name given to a table column that references the primary key on another table. In the case of a one to many relationship, the primary key column of the one table is duplicated in the many table. That column is called the foreign key in that many table.
+
 - [ ] What is the name given to a table column that references the primary key on another table.
+
+      To establish a many to many relationship between two tables, we need a pivot table, also called junction table, that stored the primary keys of both tables and establish the relationship between them.
+     
+
 
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
 

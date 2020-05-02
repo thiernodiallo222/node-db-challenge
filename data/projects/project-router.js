@@ -1,8 +1,7 @@
 const express = require('express');
 const projects = require("./project-model.js");
-
-
 const router = express.Router();
+
 
 router.get('/', async (req, res, next) => {
     try {
