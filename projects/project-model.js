@@ -10,8 +10,12 @@ const db = require("../data/config");
         }
         return db("projects").where("projects.id", project_id ).first();
     }
+function add(payload) {
+   return db("projects").insert(payload);
+    }
 
 module.exports = {
     getProjects,
     getById,
+    add,
     }

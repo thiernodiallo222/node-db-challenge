@@ -1,17 +1,22 @@
 const db = require("../data/config");
 
-    function  getProjects(){
-        return db("projects")
+function add(payload) {
+   return db("tasks").insert(payload);
     }
 
-    function getById(project_id){
-        if (!project_id) {
+    function  getTasks(){
+        return db("tasks")
+    }
+
+    function getById(task_id){
+        if (!task_id) {
             return null;
         }
-        return db("projects").where("projects.id", project_id ).first();
+        return db("tasks").where("tasks.id", task_id ).first();
     }
 
 module.exports = {
-    getProjects,
+    getTasks,
     getById,
+    add,
     }

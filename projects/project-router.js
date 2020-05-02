@@ -2,6 +2,27 @@ const express = require("express");
 const projects = require("./project-model");
 const router = express.Router();
 
+router.post('/', async (req, res, next) => {
+  try {
+    if (!req.body.name) {
+      res.json({message: "Name is required. Please provide one."})
+    } else {
+       const payload = {
+      name: req.body.name,
+      description: req.body.description,
+      completed: req.body.completed,
+       }
+     const created = await projects.add(payload)
+      if (created) {
+        res.status(200).json(created);
+      }
+ res.status(500).json({ message: 'Failed to create new project' });
+    }    
+  } catch (error) {
+    next(error);
+  }
+});
+
 router.get('/', async (req, res, next) => {
     try {
         const data = await projects.getProjects()
