@@ -1,4 +1,4 @@
-const db = require("../config");
+const db = require("../data/config");
 
     function  getProjects(){
         return db("projects")
